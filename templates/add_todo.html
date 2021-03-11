@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+<h3> Add ToDo </h3>
+<hr>
+
+<form method="post">
+    <d1>
+        
+        {{ render_field(form.ToDo, class= "form-control") }}
+        {{ render_field(form.Due_Date, class= "form-control") }}
+      
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </d1>
+</form>
+
+{% endblock body %}

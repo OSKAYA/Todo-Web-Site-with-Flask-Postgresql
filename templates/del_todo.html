@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+<h3> del_todo </h3>
+<hr>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Author</th>
+      <th scope="col">Todo</th>
+      <th scope="col">Date_Created</th> 
+      <th scope="col">Due_Date</th>
+      <th scope="col">Update</th>
+      <th scope="col">Del</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  {% for data in datas %}
+    <tr>
+      <th scope="row">{{data[0]}}</th>
+      <td>{{data[1]}}</td>
+      <td>{{data[2]}}</td>
+      <td>{{data[3]}}</td>
+      <td>{{data[4]}}</td>
+      <td>{{data[5]}}</td>
+      <td><a class="btn btn-danger">update</td>
+      <td><a href="/del_todo" class="btn btn-danger">Del</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}
